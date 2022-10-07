@@ -1,0 +1,76 @@
+<!-- navbar starts here -->
+<nav class="navbar navbar-expand-lg bg-secondary">
+  <div class="container-fluid">
+    <a class="navbar-brand" routerLink="/register">Register</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a
+            class="nav-link active"
+            aria-current="page"
+            routerLink="/special-events"
+            >Special Events</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" routerLink="/login">Login</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link active" routerLink="/events">Events</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<!-- navbar ends here -->
+
+<!-- sign up form starts here -->
+<div class="container col-md-6 mt-5 signupform">
+  <h2 class="text-center pt-3">Sign Up Form</h2>
+  <form class="p-5" [formGroup]="signupForm" (ngSubmit)="signUp()">
+    <div class="form-group">
+      <label for="aemail">Email</label>
+      <br />
+      <input
+        type="email"
+        class="form-control"
+        formControlName="aemail"
+        style="width: 100%"
+        placeholder="Enter Email"
+      />
+    </div>
+    <br />
+    <br />
+    <div class="form-group">
+      <label for="apassword">Password</label>
+      <br />
+      <input
+        type="password"
+        class="form-control"
+        formControlName="apassword"
+        style="width: 100%"
+        placeholder="Enter Password"
+      />
+    </div>
+    <br />
+    <br />
+    <div>
+      <button type="submit" style="width: 100%" class="btn btn-primary">
+        Submit
+      </button>
+    </div>
+  </form>
+</div>
+<!-- sign up form ends here -->

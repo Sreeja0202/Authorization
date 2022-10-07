@@ -1,0 +1,82 @@
+<!-- navbar starts here -->
+<nav class="navbar navbar-expand-lg bg-secondary">
+  <div class="container-fluid">
+    <a class="navbar-brand" routerLink="/login">Login</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a
+            class="nav-link active"
+            aria-current="page"
+            routerLink="/special-events"
+            *ngIf="authservice.IsloggedIn()"
+            >Special Events</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" routerLink="/events">Events</a>
+        </li>
+
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            routerLink="/register"
+            *ngIf="authservice.IsloggedIn()"
+            >Register</a
+          >
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<!-- navbar ends here -->
+
+<!-- login form starts here -->
+<div class="container col-md-6 mt-5 loginform">
+  <h2 class="text-center pt-3">Login Form</h2>
+  <form class="p-5" [formGroup]="loginForm" (ngSubmit)="logIn()">
+    <div class="form-group">
+      <label for="aemail">Email</label>
+      <br />
+      <input
+        type="email"
+        class="form-control"
+        formControlName="aemail"
+        style="width: 100%"
+        placeholder="Enter Email"
+      />
+    </div>
+    <br />
+    <br />
+    <div class="form-group">
+      <label for="apassword">Password</label>
+      <br />
+      <input
+        type="password"
+        class="form-control"
+        formControlName="apassword"
+        style="width: 100%"
+        placeholder="Enter Password"
+      />
+    </div>
+    <br />
+    <br />
+    <div>
+      <button type="submit" style="width: 100%" class="btn btn-primary">
+        Submit
+      </button>
+    </div>
+  </form>
+</div>
+<!-- login form ends here -->
